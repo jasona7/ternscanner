@@ -61,7 +61,7 @@ newformat = image.replace(":", "-").replace("/", "-")
 
 if args.push_time is not None:
     arw = arrow.utcnow()
-    print(args.push_time, "days ago the date was",  arw.shift(days=-10), "Checking for pushes occuring since then.")
+    print(args.push_time, "days ago the date was",  arw.shift(days=-args.push_time), "Checking for pushes occuring since then.")
     #print(push_time)
     cmnd = 'curl -X GET https://system.registry.aws-us-east-2.devstar.cloud/api/v2.0/projects/' + args.project_name + '/repositories/' + args.repo_name + '/artifacts?page=%d&page_size=40'
     cmnd_response = subprocess.call(cmnd, shell=True) # returns the exit code

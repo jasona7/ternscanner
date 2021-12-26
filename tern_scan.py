@@ -3,9 +3,7 @@
 # Import the standard python library
 import subprocess
 import argparse
-import os
 from datetime import datetime,timedelta
-import json
 import arrow
 import boto3
 
@@ -13,8 +11,9 @@ import boto3
 image_registry = "public.ecr.aws/"
 release_bucket_name = 'automate-tern'
 release_file = "ficticious_release_11.3.txt"
-s3_bucket = s3_resource.Object(release_bucket_name, release_file).upload_file(
-    Filename=release_file)
+s3 = boto3.resource('s3')
+s3.meta.client.download_file(release_file, release_bucket_name, release_file)
+print (s3)
 
 # Create the parser
 parser = argparse.ArgumentParser(

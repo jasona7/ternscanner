@@ -54,7 +54,7 @@ newformat = image.replace(":", "-").replace("/", "-")
 
 # print('Hello,', args)
 #Check the push_time fo the artifact
-#cmnd = 'curl -X GET https://system.registry.aws-us-east-2.devstar.cloud/api/v2.0/projects/' + args.project_name + '/repositories/' + args.repo_name + '/artifacts?page=%d&page_size=40'
+#cmnd = 'curl -X GET https://$image_registry/api/v2.0/projects/' + args.project_name + '/repositories/' + args.repo_name + '/artifacts?page=%d&page_size=40'
 #print(cmnd)
 #os.system(cmnd)
 
